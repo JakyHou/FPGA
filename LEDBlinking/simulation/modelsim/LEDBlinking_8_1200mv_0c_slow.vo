@@ -1,0 +1,1418 @@
+// Copyright (C) 2017  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Intel and sold by Intel or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition"
+
+// DATE "02/23/2018 22:12:46"
+
+// 
+// Device: Altera EP4CE22F17C8 Package FBGA256
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module LEDBlinking (
+	extClock,
+	ext_rst_n,
+	led);
+input 	extClock;
+input 	ext_rst_n;
+output 	led;
+
+// Design Ports Information
+// led	=>  Location: PIN_A5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// extClock	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ext_rst_n	=>  Location: PIN_E16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("LEDBlinking_8_1200mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DCLK~~padout ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_nCEO~~padout ;
+wire \~ALTERA_DCLK~~obuf_o ;
+wire \~ALTERA_nCEO~~obuf_o ;
+wire \extClock~input_o ;
+wire \extClock~inputclkctrl_outclk ;
+wire \u1SysCtrl|rst_r1~feeder_combout ;
+wire \ext_rst_n~input_o ;
+wire \ext_rst_n~inputclkctrl_outclk ;
+wire \u1SysCtrl|rst_r1~q ;
+wire \u1SysCtrl|rst_r2~feeder_combout ;
+wire \u1SysCtrl|rst_r2~q ;
+wire \u1SysCtrl|rst_r2~clkctrl_outclk ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_fbout ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ;
+wire \u2LedController|cnt[0]~69_combout ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl_outclk ;
+wire \u1SysCtrl|sys_rst_n~feeder_combout ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_locked ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder_combout ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~q ;
+wire \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked~combout ;
+wire \u1SysCtrl|sys_rst_nr~q ;
+wire \u1SysCtrl|sys_rst_n~q ;
+wire \u2LedController|cnt[1]~23_combout ;
+wire \u2LedController|cnt[1]~24 ;
+wire \u2LedController|cnt[2]~25_combout ;
+wire \u2LedController|cnt[2]~26 ;
+wire \u2LedController|cnt[3]~27_combout ;
+wire \u2LedController|cnt[3]~28 ;
+wire \u2LedController|cnt[4]~29_combout ;
+wire \u2LedController|cnt[4]~30 ;
+wire \u2LedController|cnt[5]~31_combout ;
+wire \u2LedController|cnt[5]~32 ;
+wire \u2LedController|cnt[6]~33_combout ;
+wire \u2LedController|cnt[6]~34 ;
+wire \u2LedController|cnt[7]~35_combout ;
+wire \u2LedController|cnt[7]~36 ;
+wire \u2LedController|cnt[8]~37_combout ;
+wire \u2LedController|cnt[8]~38 ;
+wire \u2LedController|cnt[9]~39_combout ;
+wire \u2LedController|cnt[9]~40 ;
+wire \u2LedController|cnt[10]~41_combout ;
+wire \u2LedController|cnt[10]~42 ;
+wire \u2LedController|cnt[11]~43_combout ;
+wire \u2LedController|cnt[11]~44 ;
+wire \u2LedController|cnt[12]~45_combout ;
+wire \u2LedController|cnt[12]~46 ;
+wire \u2LedController|cnt[13]~47_combout ;
+wire \u2LedController|cnt[13]~48 ;
+wire \u2LedController|cnt[14]~49_combout ;
+wire \u2LedController|cnt[14]~50 ;
+wire \u2LedController|cnt[15]~51_combout ;
+wire \u2LedController|cnt[15]~52 ;
+wire \u2LedController|cnt[16]~53_combout ;
+wire \u2LedController|cnt[16]~54 ;
+wire \u2LedController|cnt[17]~55_combout ;
+wire \u2LedController|cnt[17]~56 ;
+wire \u2LedController|cnt[18]~57_combout ;
+wire \u2LedController|cnt[18]~58 ;
+wire \u2LedController|cnt[19]~59_combout ;
+wire \u2LedController|cnt[19]~60 ;
+wire \u2LedController|cnt[20]~61_combout ;
+wire \u2LedController|cnt[20]~62 ;
+wire \u2LedController|cnt[21]~63_combout ;
+wire \u2LedController|cnt[21]~64 ;
+wire \u2LedController|cnt[22]~65_combout ;
+wire \u2LedController|cnt[22]~66 ;
+wire \u2LedController|cnt[23]~67_combout ;
+wire [23:0] \u2LedController|cnt ;
+wire [4:0] \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk ;
+
+wire [4:0] \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus ;
+
+assign \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [0] = \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus [0];
+assign \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [1] = \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus [1];
+assign \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [2] = \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus [2];
+assign \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [3] = \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus [3];
+assign \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [4] = \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus [4];
+
+// Location: IOOBUF_X14_Y34_N23
+cycloneive_io_obuf \led~output (
+	.i(\u2LedController|cnt [23]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(led),
+	.obar());
+// synopsys translate_off
+defparam \led~output .bus_hold = "false";
+defparam \led~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X53_Y17_N1
+cycloneive_io_ibuf \extClock~input (
+	.i(extClock),
+	.ibar(gnd),
+	.o(\extClock~input_o ));
+// synopsys translate_off
+defparam \extClock~input .bus_hold = "false";
+defparam \extClock~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G7
+cycloneive_clkctrl \extClock~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\extClock~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\extClock~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \extClock~inputclkctrl .clock_type = "global clock";
+defparam \extClock~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y33_N10
+cycloneive_lcell_comb \u1SysCtrl|rst_r1~feeder (
+// Equation(s):
+// \u1SysCtrl|rst_r1~feeder_combout  = VCC
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\u1SysCtrl|rst_r1~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u1SysCtrl|rst_r1~feeder .lut_mask = 16'hFFFF;
+defparam \u1SysCtrl|rst_r1~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X53_Y17_N8
+cycloneive_io_ibuf \ext_rst_n~input (
+	.i(ext_rst_n),
+	.ibar(gnd),
+	.o(\ext_rst_n~input_o ));
+// synopsys translate_off
+defparam \ext_rst_n~input .bus_hold = "false";
+defparam \ext_rst_n~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G6
+cycloneive_clkctrl \ext_rst_n~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\ext_rst_n~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\ext_rst_n~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \ext_rst_n~inputclkctrl .clock_type = "global clock";
+defparam \ext_rst_n~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: FF_X25_Y33_N11
+dffeas \u1SysCtrl|rst_r1 (
+	.clk(\extClock~inputclkctrl_outclk ),
+	.d(\u1SysCtrl|rst_r1~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\ext_rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u1SysCtrl|rst_r1~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u1SysCtrl|rst_r1 .is_wysiwyg = "true";
+defparam \u1SysCtrl|rst_r1 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X25_Y33_N0
+cycloneive_lcell_comb \u1SysCtrl|rst_r2~feeder (
+// Equation(s):
+// \u1SysCtrl|rst_r2~feeder_combout  = \u1SysCtrl|rst_r1~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\u1SysCtrl|rst_r1~q ),
+	.cin(gnd),
+	.combout(\u1SysCtrl|rst_r2~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u1SysCtrl|rst_r2~feeder .lut_mask = 16'hFF00;
+defparam \u1SysCtrl|rst_r2~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X25_Y33_N1
+dffeas \u1SysCtrl|rst_r2 (
+	.clk(\extClock~inputclkctrl_outclk ),
+	.d(\u1SysCtrl|rst_r2~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\ext_rst_n~inputclkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u1SysCtrl|rst_r2~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u1SysCtrl|rst_r2 .is_wysiwyg = "true";
+defparam \u1SysCtrl|rst_r2 .power_up = "low";
+// synopsys translate_on
+
+// Location: CLKCTRL_G14
+cycloneive_clkctrl \u1SysCtrl|rst_r2~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\u1SysCtrl|rst_r2~q }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\u1SysCtrl|rst_r2~clkctrl_outclk ));
+// synopsys translate_off
+defparam \u1SysCtrl|rst_r2~clkctrl .clock_type = "global clock";
+defparam \u1SysCtrl|rst_r2~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: PLL_2
+cycloneive_pll \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 (
+	.areset(!\u1SysCtrl|rst_r2~clkctrl_outclk ),
+	.pfdena(vcc),
+	.fbin(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_fbout ),
+	.phaseupdown(gnd),
+	.phasestep(gnd),
+	.scandata(gnd),
+	.scanclk(gnd),
+	.scanclkena(vcc),
+	.configupdate(gnd),
+	.clkswitch(gnd),
+	.inclk({gnd,\extClock~input_o }),
+	.phasecounterselect(3'b000),
+	.phasedone(),
+	.scandataout(),
+	.scandone(),
+	.activeclock(),
+	.locked(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_locked ),
+	.vcooverrange(),
+	.vcounderrange(),
+	.fbout(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_fbout ),
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1_CLK_bus ),
+	.clkbad());
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .auto_settings = "false";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .bandwidth_type = "medium";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c0_high = 12;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c0_initial = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c0_low = 12;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c0_mode = "even";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c0_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_high = 3;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_initial = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_low = 3;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_mode = "even";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c1_use_casc_in = "off";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_high = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_initial = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_low = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_mode = "bypass";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c2_use_casc_in = "off";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_high = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_initial = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_low = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_mode = "bypass";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c3_use_casc_in = "off";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_high = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_initial = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_low = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_mode = "bypass";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .c4_use_casc_in = "off";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .charge_pump_current_bits = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk0_counter = "c0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk0_divide_by = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk0_duty_cycle = 50;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk0_multiply_by = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk0_phase_shift = "0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk1_counter = "unused";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk1_divide_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk1_duty_cycle = 50;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk1_multiply_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk1_phase_shift = "0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk2_counter = "unused";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk2_divide_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk2_duty_cycle = 50;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk2_multiply_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk2_phase_shift = "0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk3_counter = "unused";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk3_divide_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk3_duty_cycle = 50;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk3_multiply_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk3_phase_shift = "0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk4_counter = "c1";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk4_divide_by = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk4_duty_cycle = 50;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk4_multiply_by = 4;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .clk4_phase_shift = "0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .compensate_clock = "clock0";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .inclk0_input_frequency = 40000;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .inclk1_input_frequency = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .loop_filter_c_bits = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .loop_filter_r_bits = 24;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .m = 24;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .m_initial = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .m_ph = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .n = 1;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .operation_mode = "normal";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .pfd_max = 200000;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .pfd_min = 3076;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .self_reset_on_loss_lock = "off";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .simulation_type = "timing";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .switch_over_type = "auto";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_center = 1538;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_divide_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_frequency_control = "auto";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_max = 3333;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_min = 1538;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_multiply_by = 0;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_phase_shift_step = 208;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1 .vco_post_scale = 2;
+// synopsys translate_on
+
+// Location: CLKCTRL_G8
+cycloneive_clkctrl \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [0]}),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ));
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .clock_type = "global clock";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N8
+cycloneive_lcell_comb \u2LedController|cnt[0]~69 (
+// Equation(s):
+// \u2LedController|cnt[0]~69_combout  = !\u2LedController|cnt [0]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\u2LedController|cnt [0]),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\u2LedController|cnt[0]~69_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u2LedController|cnt[0]~69 .lut_mask = 16'h0F0F;
+defparam \u2LedController|cnt[0]~69 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: CLKCTRL_G9
+cycloneive_clkctrl \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk [4]}),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl_outclk ));
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl .clock_type = "global clock";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N2
+cycloneive_lcell_comb \u1SysCtrl|sys_rst_n~feeder (
+// Equation(s):
+// \u1SysCtrl|sys_rst_n~feeder_combout  = VCC
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\u1SysCtrl|sys_rst_n~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u1SysCtrl|sys_rst_n~feeder .lut_mask = 16'hFFFF;
+defparam \u1SysCtrl|sys_rst_n~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X52_Y33_N10
+cycloneive_lcell_comb \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder (
+// Equation(s):
+// \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder_combout  = VCC
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder .lut_mask = 16'hFFFF;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X52_Y33_N11
+dffeas \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_locked ),
+	.d(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|rst_r2~clkctrl_outclk ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync .is_wysiwyg = "true";
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X52_Y33_N8
+cycloneive_lcell_comb \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked (
+// Equation(s):
+// \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked~combout  = (\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_locked  & \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_locked ),
+	.datad(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll_lock_sync~q ),
+	.cin(gnd),
+	.combout(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked~combout ),
+	.cout());
+// synopsys translate_off
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked .lut_mask = 16'hF000;
+defparam \u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X52_Y33_N9
+dffeas \u1SysCtrl|sys_rst_nr (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl_outclk ),
+	.d(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|locked~combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u1SysCtrl|sys_rst_nr~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u1SysCtrl|sys_rst_nr .is_wysiwyg = "true";
+defparam \u1SysCtrl|sys_rst_nr .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N3
+dffeas \u1SysCtrl|sys_rst_n (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[4]~clkctrl_outclk ),
+	.d(\u1SysCtrl|sys_rst_n~feeder_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_nr~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u1SysCtrl|sys_rst_n~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u1SysCtrl|sys_rst_n .is_wysiwyg = "true";
+defparam \u1SysCtrl|sys_rst_n .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N9
+dffeas \u2LedController|cnt[0] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[0]~69_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[0] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N10
+cycloneive_lcell_comb \u2LedController|cnt[1]~23 (
+// Equation(s):
+// \u2LedController|cnt[1]~23_combout  = (\u2LedController|cnt [1] & (\u2LedController|cnt [0] $ (VCC))) # (!\u2LedController|cnt [1] & (\u2LedController|cnt [0] & VCC))
+// \u2LedController|cnt[1]~24  = CARRY((\u2LedController|cnt [1] & \u2LedController|cnt [0]))
+
+	.dataa(\u2LedController|cnt [1]),
+	.datab(\u2LedController|cnt [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\u2LedController|cnt[1]~23_combout ),
+	.cout(\u2LedController|cnt[1]~24 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[1]~23 .lut_mask = 16'h6688;
+defparam \u2LedController|cnt[1]~23 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N11
+dffeas \u2LedController|cnt[1] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[1]~23_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[1] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N12
+cycloneive_lcell_comb \u2LedController|cnt[2]~25 (
+// Equation(s):
+// \u2LedController|cnt[2]~25_combout  = (\u2LedController|cnt [2] & (!\u2LedController|cnt[1]~24 )) # (!\u2LedController|cnt [2] & ((\u2LedController|cnt[1]~24 ) # (GND)))
+// \u2LedController|cnt[2]~26  = CARRY((!\u2LedController|cnt[1]~24 ) # (!\u2LedController|cnt [2]))
+
+	.dataa(\u2LedController|cnt [2]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[1]~24 ),
+	.combout(\u2LedController|cnt[2]~25_combout ),
+	.cout(\u2LedController|cnt[2]~26 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[2]~25 .lut_mask = 16'h5A5F;
+defparam \u2LedController|cnt[2]~25 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N13
+dffeas \u2LedController|cnt[2] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[2]~25_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[2] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N14
+cycloneive_lcell_comb \u2LedController|cnt[3]~27 (
+// Equation(s):
+// \u2LedController|cnt[3]~27_combout  = (\u2LedController|cnt [3] & (\u2LedController|cnt[2]~26  $ (GND))) # (!\u2LedController|cnt [3] & (!\u2LedController|cnt[2]~26  & VCC))
+// \u2LedController|cnt[3]~28  = CARRY((\u2LedController|cnt [3] & !\u2LedController|cnt[2]~26 ))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[2]~26 ),
+	.combout(\u2LedController|cnt[3]~27_combout ),
+	.cout(\u2LedController|cnt[3]~28 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[3]~27 .lut_mask = 16'hC30C;
+defparam \u2LedController|cnt[3]~27 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N15
+dffeas \u2LedController|cnt[3] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[3]~27_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[3] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N16
+cycloneive_lcell_comb \u2LedController|cnt[4]~29 (
+// Equation(s):
+// \u2LedController|cnt[4]~29_combout  = (\u2LedController|cnt [4] & (!\u2LedController|cnt[3]~28 )) # (!\u2LedController|cnt [4] & ((\u2LedController|cnt[3]~28 ) # (GND)))
+// \u2LedController|cnt[4]~30  = CARRY((!\u2LedController|cnt[3]~28 ) # (!\u2LedController|cnt [4]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [4]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[3]~28 ),
+	.combout(\u2LedController|cnt[4]~29_combout ),
+	.cout(\u2LedController|cnt[4]~30 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[4]~29 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[4]~29 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N17
+dffeas \u2LedController|cnt[4] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[4]~29_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[4] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N18
+cycloneive_lcell_comb \u2LedController|cnt[5]~31 (
+// Equation(s):
+// \u2LedController|cnt[5]~31_combout  = (\u2LedController|cnt [5] & (\u2LedController|cnt[4]~30  $ (GND))) # (!\u2LedController|cnt [5] & (!\u2LedController|cnt[4]~30  & VCC))
+// \u2LedController|cnt[5]~32  = CARRY((\u2LedController|cnt [5] & !\u2LedController|cnt[4]~30 ))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[4]~30 ),
+	.combout(\u2LedController|cnt[5]~31_combout ),
+	.cout(\u2LedController|cnt[5]~32 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[5]~31 .lut_mask = 16'hC30C;
+defparam \u2LedController|cnt[5]~31 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N19
+dffeas \u2LedController|cnt[5] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[5]~31_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[5] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N20
+cycloneive_lcell_comb \u2LedController|cnt[6]~33 (
+// Equation(s):
+// \u2LedController|cnt[6]~33_combout  = (\u2LedController|cnt [6] & (!\u2LedController|cnt[5]~32 )) # (!\u2LedController|cnt [6] & ((\u2LedController|cnt[5]~32 ) # (GND)))
+// \u2LedController|cnt[6]~34  = CARRY((!\u2LedController|cnt[5]~32 ) # (!\u2LedController|cnt [6]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [6]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[5]~32 ),
+	.combout(\u2LedController|cnt[6]~33_combout ),
+	.cout(\u2LedController|cnt[6]~34 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[6]~33 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[6]~33 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N21
+dffeas \u2LedController|cnt[6] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[6]~33_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[6] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N22
+cycloneive_lcell_comb \u2LedController|cnt[7]~35 (
+// Equation(s):
+// \u2LedController|cnt[7]~35_combout  = (\u2LedController|cnt [7] & (\u2LedController|cnt[6]~34  $ (GND))) # (!\u2LedController|cnt [7] & (!\u2LedController|cnt[6]~34  & VCC))
+// \u2LedController|cnt[7]~36  = CARRY((\u2LedController|cnt [7] & !\u2LedController|cnt[6]~34 ))
+
+	.dataa(\u2LedController|cnt [7]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[6]~34 ),
+	.combout(\u2LedController|cnt[7]~35_combout ),
+	.cout(\u2LedController|cnt[7]~36 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[7]~35 .lut_mask = 16'hA50A;
+defparam \u2LedController|cnt[7]~35 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N23
+dffeas \u2LedController|cnt[7] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[7]~35_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[7] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N24
+cycloneive_lcell_comb \u2LedController|cnt[8]~37 (
+// Equation(s):
+// \u2LedController|cnt[8]~37_combout  = (\u2LedController|cnt [8] & (!\u2LedController|cnt[7]~36 )) # (!\u2LedController|cnt [8] & ((\u2LedController|cnt[7]~36 ) # (GND)))
+// \u2LedController|cnt[8]~38  = CARRY((!\u2LedController|cnt[7]~36 ) # (!\u2LedController|cnt [8]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [8]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[7]~36 ),
+	.combout(\u2LedController|cnt[8]~37_combout ),
+	.cout(\u2LedController|cnt[8]~38 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[8]~37 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[8]~37 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N25
+dffeas \u2LedController|cnt[8] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[8]~37_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[8] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N26
+cycloneive_lcell_comb \u2LedController|cnt[9]~39 (
+// Equation(s):
+// \u2LedController|cnt[9]~39_combout  = (\u2LedController|cnt [9] & (\u2LedController|cnt[8]~38  $ (GND))) # (!\u2LedController|cnt [9] & (!\u2LedController|cnt[8]~38  & VCC))
+// \u2LedController|cnt[9]~40  = CARRY((\u2LedController|cnt [9] & !\u2LedController|cnt[8]~38 ))
+
+	.dataa(\u2LedController|cnt [9]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[8]~38 ),
+	.combout(\u2LedController|cnt[9]~39_combout ),
+	.cout(\u2LedController|cnt[9]~40 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[9]~39 .lut_mask = 16'hA50A;
+defparam \u2LedController|cnt[9]~39 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N27
+dffeas \u2LedController|cnt[9] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[9]~39_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[9] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N28
+cycloneive_lcell_comb \u2LedController|cnt[10]~41 (
+// Equation(s):
+// \u2LedController|cnt[10]~41_combout  = (\u2LedController|cnt [10] & (!\u2LedController|cnt[9]~40 )) # (!\u2LedController|cnt [10] & ((\u2LedController|cnt[9]~40 ) # (GND)))
+// \u2LedController|cnt[10]~42  = CARRY((!\u2LedController|cnt[9]~40 ) # (!\u2LedController|cnt [10]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[9]~40 ),
+	.combout(\u2LedController|cnt[10]~41_combout ),
+	.cout(\u2LedController|cnt[10]~42 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[10]~41 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[10]~41 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N29
+dffeas \u2LedController|cnt[10] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[10]~41_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[10] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y33_N30
+cycloneive_lcell_comb \u2LedController|cnt[11]~43 (
+// Equation(s):
+// \u2LedController|cnt[11]~43_combout  = (\u2LedController|cnt [11] & (\u2LedController|cnt[10]~42  $ (GND))) # (!\u2LedController|cnt [11] & (!\u2LedController|cnt[10]~42  & VCC))
+// \u2LedController|cnt[11]~44  = CARRY((\u2LedController|cnt [11] & !\u2LedController|cnt[10]~42 ))
+
+	.dataa(\u2LedController|cnt [11]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[10]~42 ),
+	.combout(\u2LedController|cnt[11]~43_combout ),
+	.cout(\u2LedController|cnt[11]~44 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[11]~43 .lut_mask = 16'hA50A;
+defparam \u2LedController|cnt[11]~43 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y33_N31
+dffeas \u2LedController|cnt[11] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[11]~43_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[11] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N0
+cycloneive_lcell_comb \u2LedController|cnt[12]~45 (
+// Equation(s):
+// \u2LedController|cnt[12]~45_combout  = (\u2LedController|cnt [12] & (!\u2LedController|cnt[11]~44 )) # (!\u2LedController|cnt [12] & ((\u2LedController|cnt[11]~44 ) # (GND)))
+// \u2LedController|cnt[12]~46  = CARRY((!\u2LedController|cnt[11]~44 ) # (!\u2LedController|cnt [12]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [12]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[11]~44 ),
+	.combout(\u2LedController|cnt[12]~45_combout ),
+	.cout(\u2LedController|cnt[12]~46 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[12]~45 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[12]~45 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N1
+dffeas \u2LedController|cnt[12] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[12]~45_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[12] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N2
+cycloneive_lcell_comb \u2LedController|cnt[13]~47 (
+// Equation(s):
+// \u2LedController|cnt[13]~47_combout  = (\u2LedController|cnt [13] & (\u2LedController|cnt[12]~46  $ (GND))) # (!\u2LedController|cnt [13] & (!\u2LedController|cnt[12]~46  & VCC))
+// \u2LedController|cnt[13]~48  = CARRY((\u2LedController|cnt [13] & !\u2LedController|cnt[12]~46 ))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [13]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[12]~46 ),
+	.combout(\u2LedController|cnt[13]~47_combout ),
+	.cout(\u2LedController|cnt[13]~48 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[13]~47 .lut_mask = 16'hC30C;
+defparam \u2LedController|cnt[13]~47 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N3
+dffeas \u2LedController|cnt[13] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[13]~47_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[13] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N4
+cycloneive_lcell_comb \u2LedController|cnt[14]~49 (
+// Equation(s):
+// \u2LedController|cnt[14]~49_combout  = (\u2LedController|cnt [14] & (!\u2LedController|cnt[13]~48 )) # (!\u2LedController|cnt [14] & ((\u2LedController|cnt[13]~48 ) # (GND)))
+// \u2LedController|cnt[14]~50  = CARRY((!\u2LedController|cnt[13]~48 ) # (!\u2LedController|cnt [14]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [14]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[13]~48 ),
+	.combout(\u2LedController|cnt[14]~49_combout ),
+	.cout(\u2LedController|cnt[14]~50 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[14]~49 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[14]~49 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N5
+dffeas \u2LedController|cnt[14] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[14]~49_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[14] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N6
+cycloneive_lcell_comb \u2LedController|cnt[15]~51 (
+// Equation(s):
+// \u2LedController|cnt[15]~51_combout  = (\u2LedController|cnt [15] & (\u2LedController|cnt[14]~50  $ (GND))) # (!\u2LedController|cnt [15] & (!\u2LedController|cnt[14]~50  & VCC))
+// \u2LedController|cnt[15]~52  = CARRY((\u2LedController|cnt [15] & !\u2LedController|cnt[14]~50 ))
+
+	.dataa(\u2LedController|cnt [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[14]~50 ),
+	.combout(\u2LedController|cnt[15]~51_combout ),
+	.cout(\u2LedController|cnt[15]~52 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[15]~51 .lut_mask = 16'hA50A;
+defparam \u2LedController|cnt[15]~51 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N7
+dffeas \u2LedController|cnt[15] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[15]~51_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[15] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N8
+cycloneive_lcell_comb \u2LedController|cnt[16]~53 (
+// Equation(s):
+// \u2LedController|cnt[16]~53_combout  = (\u2LedController|cnt [16] & (!\u2LedController|cnt[15]~52 )) # (!\u2LedController|cnt [16] & ((\u2LedController|cnt[15]~52 ) # (GND)))
+// \u2LedController|cnt[16]~54  = CARRY((!\u2LedController|cnt[15]~52 ) # (!\u2LedController|cnt [16]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [16]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[15]~52 ),
+	.combout(\u2LedController|cnt[16]~53_combout ),
+	.cout(\u2LedController|cnt[16]~54 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[16]~53 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[16]~53 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N9
+dffeas \u2LedController|cnt[16] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[16]~53_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [16]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[16] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[16] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N10
+cycloneive_lcell_comb \u2LedController|cnt[17]~55 (
+// Equation(s):
+// \u2LedController|cnt[17]~55_combout  = (\u2LedController|cnt [17] & (\u2LedController|cnt[16]~54  $ (GND))) # (!\u2LedController|cnt [17] & (!\u2LedController|cnt[16]~54  & VCC))
+// \u2LedController|cnt[17]~56  = CARRY((\u2LedController|cnt [17] & !\u2LedController|cnt[16]~54 ))
+
+	.dataa(\u2LedController|cnt [17]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[16]~54 ),
+	.combout(\u2LedController|cnt[17]~55_combout ),
+	.cout(\u2LedController|cnt[17]~56 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[17]~55 .lut_mask = 16'hA50A;
+defparam \u2LedController|cnt[17]~55 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N11
+dffeas \u2LedController|cnt[17] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[17]~55_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [17]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[17] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[17] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N12
+cycloneive_lcell_comb \u2LedController|cnt[18]~57 (
+// Equation(s):
+// \u2LedController|cnt[18]~57_combout  = (\u2LedController|cnt [18] & (!\u2LedController|cnt[17]~56 )) # (!\u2LedController|cnt [18] & ((\u2LedController|cnt[17]~56 ) # (GND)))
+// \u2LedController|cnt[18]~58  = CARRY((!\u2LedController|cnt[17]~56 ) # (!\u2LedController|cnt [18]))
+
+	.dataa(\u2LedController|cnt [18]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[17]~56 ),
+	.combout(\u2LedController|cnt[18]~57_combout ),
+	.cout(\u2LedController|cnt[18]~58 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[18]~57 .lut_mask = 16'h5A5F;
+defparam \u2LedController|cnt[18]~57 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N13
+dffeas \u2LedController|cnt[18] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[18]~57_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [18]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[18] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[18] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N14
+cycloneive_lcell_comb \u2LedController|cnt[19]~59 (
+// Equation(s):
+// \u2LedController|cnt[19]~59_combout  = (\u2LedController|cnt [19] & (\u2LedController|cnt[18]~58  $ (GND))) # (!\u2LedController|cnt [19] & (!\u2LedController|cnt[18]~58  & VCC))
+// \u2LedController|cnt[19]~60  = CARRY((\u2LedController|cnt [19] & !\u2LedController|cnt[18]~58 ))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [19]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[18]~58 ),
+	.combout(\u2LedController|cnt[19]~59_combout ),
+	.cout(\u2LedController|cnt[19]~60 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[19]~59 .lut_mask = 16'hC30C;
+defparam \u2LedController|cnt[19]~59 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N15
+dffeas \u2LedController|cnt[19] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[19]~59_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [19]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[19] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[19] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N16
+cycloneive_lcell_comb \u2LedController|cnt[20]~61 (
+// Equation(s):
+// \u2LedController|cnt[20]~61_combout  = (\u2LedController|cnt [20] & (!\u2LedController|cnt[19]~60 )) # (!\u2LedController|cnt [20] & ((\u2LedController|cnt[19]~60 ) # (GND)))
+// \u2LedController|cnt[20]~62  = CARRY((!\u2LedController|cnt[19]~60 ) # (!\u2LedController|cnt [20]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [20]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[19]~60 ),
+	.combout(\u2LedController|cnt[20]~61_combout ),
+	.cout(\u2LedController|cnt[20]~62 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[20]~61 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[20]~61 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N17
+dffeas \u2LedController|cnt[20] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[20]~61_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [20]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[20] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[20] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N18
+cycloneive_lcell_comb \u2LedController|cnt[21]~63 (
+// Equation(s):
+// \u2LedController|cnt[21]~63_combout  = (\u2LedController|cnt [21] & (\u2LedController|cnt[20]~62  $ (GND))) # (!\u2LedController|cnt [21] & (!\u2LedController|cnt[20]~62  & VCC))
+// \u2LedController|cnt[21]~64  = CARRY((\u2LedController|cnt [21] & !\u2LedController|cnt[20]~62 ))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [21]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[20]~62 ),
+	.combout(\u2LedController|cnt[21]~63_combout ),
+	.cout(\u2LedController|cnt[21]~64 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[21]~63 .lut_mask = 16'hC30C;
+defparam \u2LedController|cnt[21]~63 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N19
+dffeas \u2LedController|cnt[21] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[21]~63_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [21]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[21] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[21] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N20
+cycloneive_lcell_comb \u2LedController|cnt[22]~65 (
+// Equation(s):
+// \u2LedController|cnt[22]~65_combout  = (\u2LedController|cnt [22] & (!\u2LedController|cnt[21]~64 )) # (!\u2LedController|cnt [22] & ((\u2LedController|cnt[21]~64 ) # (GND)))
+// \u2LedController|cnt[22]~66  = CARRY((!\u2LedController|cnt[21]~64 ) # (!\u2LedController|cnt [22]))
+
+	.dataa(gnd),
+	.datab(\u2LedController|cnt [22]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\u2LedController|cnt[21]~64 ),
+	.combout(\u2LedController|cnt[22]~65_combout ),
+	.cout(\u2LedController|cnt[22]~66 ));
+// synopsys translate_off
+defparam \u2LedController|cnt[22]~65 .lut_mask = 16'h3C3F;
+defparam \u2LedController|cnt[22]~65 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N21
+dffeas \u2LedController|cnt[22] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[22]~65_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [22]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[22] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[22] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X43_Y32_N22
+cycloneive_lcell_comb \u2LedController|cnt[23]~67 (
+// Equation(s):
+// \u2LedController|cnt[23]~67_combout  = \u2LedController|cnt [23] $ (!\u2LedController|cnt[22]~66 )
+
+	.dataa(\u2LedController|cnt [23]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\u2LedController|cnt[22]~66 ),
+	.combout(\u2LedController|cnt[23]~67_combout ),
+	.cout());
+// synopsys translate_off
+defparam \u2LedController|cnt[23]~67 .lut_mask = 16'hA5A5;
+defparam \u2LedController|cnt[23]~67 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X43_Y32_N23
+dffeas \u2LedController|cnt[23] (
+	.clk(\u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|wire_pll1_clk[0]~clkctrl_outclk ),
+	.d(\u2LedController|cnt[23]~67_combout ),
+	.asdata(vcc),
+	.clrn(\u1SysCtrl|sys_rst_n~q ),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\u2LedController|cnt [23]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \u2LedController|cnt[23] .is_wysiwyg = "true";
+defparam \u2LedController|cnt[23] .power_up = "low";
+// synopsys translate_on
+
+endmodule

@@ -1,0 +1,21 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led",
+					"strict" : false
+				},
+				{
+					"name" : "extClock",
+					"strict" : false
+				},
+				{
+					"name" : "ext_rst_n",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

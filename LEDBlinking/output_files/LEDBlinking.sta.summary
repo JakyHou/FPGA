@@ -1,0 +1,137 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 36.522
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'extClock'
+Slack : 39.041
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'extClock'
+Slack : 0.503
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 7.568
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 7.645
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 1.052
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 1.826
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 4.691
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.691
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'extClock'
+Slack : 19.764
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 36.925
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'extClock'
+Slack : 39.135
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'extClock'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 7.697
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 7.807
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.971
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 1.627
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 4.695
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.694
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'extClock'
+Slack : 19.753
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 38.452
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'extClock'
+Slack : 39.578
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'extClock'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 8.919
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 8.920
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.426
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 0.771
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[4]'
+Slack : 4.783
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'extClock'
+Slack : 19.443
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'u1SysCtrl|PLL_controll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.783
+TNS   : 0.000
+
+------------------------------------------------------------
