@@ -1,0 +1,209 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led",
+					"strict" : false
+				},
+				{
+					"name" : "mem_ba[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_ba[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_addr[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_cke[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_cs_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_ras_n",
+					"strict" : false
+				},
+				{
+					"name" : "mem_cas_n",
+					"strict" : false
+				},
+				{
+					"name" : "mem_we_n",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dm[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dm[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_odt[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_clk[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_clk_n[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[1]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[2]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[3]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[4]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[5]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[6]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[7]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[8]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[9]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[10]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[11]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[12]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[13]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[14]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dq[15]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dqs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "mem_dqs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ext_clk",
+					"strict" : false
+				},
+				{
+					"name" : "ext_rst_n",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

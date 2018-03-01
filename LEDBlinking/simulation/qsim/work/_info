@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Git_FPGA/LEDBlinking/simulation/qsim
+vLEDBlinking
+Z1 !s110 1519401437
+!i10b 1
+!s100 ?]aRak^kf^GJ02?mF7?VB0
+I>6=;?0@aAL_D`bbKZXmhl2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1519401436
+8LEDBlinking.vo
+FLEDBlinking.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1519401437.000000
+!s107 LEDBlinking.vo|
+!s90 -work|work|LEDBlinking.vo|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+n@l@e@d@blinking
+vLEDBlinking_vlg_vec_tst
+R1
+!i10b 1
+!s100 ;DaUlS7HjDh@EVLmM8k>c2
+I;5hJS`9=;7B@L:oMO]z2j1
+R2
+R0
+w1519401435
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R5
+R6
+n@l@e@d@blinking_vlg_vec_tst

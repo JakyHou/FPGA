@@ -4,6 +4,7 @@ source_file = 1, E:/Git_FPGA/LEDBlinking/PLL_controll.v
 source_file = 1, E:/Git_FPGA/LEDBlinking/LEDBlinking.v
 source_file = 1, E:/Git_FPGA/LEDBlinking/sysControl.v
 source_file = 1, E:/Git_FPGA/LEDBlinking/ledController.v
+source_file = 1, E:/Git_FPGA/LEDBlinking/Waveform.vwf
 source_file = 1, f:/intelfpga/17.0/quartus/libraries/megafunctions/altpll.tdf
 source_file = 1, f:/intelfpga/17.0/quartus/libraries/megafunctions/aglobal170.inc
 source_file = 1, f:/intelfpga/17.0/quartus/libraries/megafunctions/stratix_pll.inc

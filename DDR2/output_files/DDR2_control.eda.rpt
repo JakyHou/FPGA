@@ -1,0 +1,115 @@
+EDA Netlist Writer report for DDR2_control
+Wed Feb 28 23:47:13 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Wed Feb 28 23:47:13 2018 ;
+; Revision Name             ; DDR2_control                          ;
+; Top-level Entity Name     ; DDR2_control                          ;
+; Family                    ; Cyclone IV E                          ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate functional simulation netlist                                                            ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------+
+; Simulation Generated Files                                                 ;
++----------------------------------------------------------------------------+
+; Generated Files                                                            ;
++----------------------------------------------------------------------------+
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_8_1200mv_85c_slow.vo     ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_8_1200mv_0c_slow.vo      ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_min_1200mv_0c_fast.vo    ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control.vo                       ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_8_1200mv_85c_v_slow.sdo  ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_8_1200mv_0c_v_slow.sdo   ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_min_1200mv_0c_v_fast.sdo ;
+; E:/Git_FPGA/DDR2/simulation/modelsim/DDR2_control_v.sdo                    ;
++----------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime EDA Netlist Writer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+    Info: Processing started: Wed Feb 28 23:47:03 2018
+Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off DDR2_control -c DDR2_control
+Warning (125092): Tcl Script File ddr2_controller_phy.qip not found
+    Info (125063): set_global_assignment -name QIP_FILE ddr2_controller_phy.qip -qip ddr2_controller.qip
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (204019): Generated file DDR2_control_8_1200mv_85c_slow.vo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DDR2_control_8_1200mv_0c_slow.vo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DDR2_control_min_1200mv_0c_fast.vo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DDR2_control.vo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file DDR2_control_8_1200mv_85c_v_slow.sdo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file DDR2_control_8_1200mv_0c_v_slow.sdo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file DDR2_control_min_1200mv_0c_v_fast.sdo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Warning (200000): Double data rate (DDR) timing delays reported by third party timing simulation are preliminary. Run the TimeQuest Timing Analyzer for analyzing delays on paths through the DDR.
+Info (204019): Generated file DDR2_control_v.sdo in folder "E:/Git_FPGA/DDR2/simulation/modelsim/" for EDA simulation tool
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 613 megabytes
+    Info: Processing ended: Wed Feb 28 23:47:13 2018
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
+
+

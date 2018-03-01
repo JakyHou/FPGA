@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Feb 28 23:46:42 2018
+Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Standard Edition
+Revision Name : DDR2_control
+Top-level Entity Name : DDR2_control
+Family : Cyclone IV E
+Device : EP4CE22F17C8
+Timing Models : Final
+Total logic elements : 5,409 / 22,320 ( 24 % )
+    Total combinational functions : 4,671 / 22,320 ( 21 % )
+    Dedicated logic registers : 3,192 / 22,320 ( 14 % )
+Total registers : 3298
+Total pins : 46 / 154 ( 30 % )
+Total virtual pins : 0
+Total memory bits : 26,592 / 608,256 ( 4 % )
+Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )
+Total PLLs : 2 / 4 ( 50 % )

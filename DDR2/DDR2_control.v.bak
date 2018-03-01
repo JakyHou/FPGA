@@ -1,0 +1,26 @@
+module hsc(
+	input	ext_clk,
+	input	ext_rst_n,
+	
+	output led,
+	
+	output [1:0]	mem_ba, //The memery bank address bus.
+	output [12:0]	mem_addr,//The memery row and colum address bus
+	output [0:0]	mem_cke,//The memery clock enable
+	output [0:0]	mem_cs_n,//The memery chip select signal.
+	
+	output 			mem_ras_n,//The memery row address strobe.
+	output			mem_cas_n,//The memery column address strobe.
+	
+	output 			mem_we_n,//The memery chip write enable signal.
+	
+	output [1:0]	mem_dm,	//The optional memery data mask bus.
+	output [0:0] 	mem_odt,//The memery on-die termination control signal.
+	inout	 [1:0]	mem_clk,//The memery clock, positive edge clock. output is for memery device, and input path is fedback to ALTMEMPHY megafunction for VT tracking.
+	inout  [0:0]	mem_clk_n,//The memery clock negative edge clock. output is for memery device, and input path is feback to ALTMEMPHY megafunction for VT tracking.
+	inout  [15:0]	mem_dq,	//The memery bidirectional data bus.
+	inout	 [1:0]	mem_dqs//The memery bidirectional data strobe bus.
+	
+	);
+	
+	

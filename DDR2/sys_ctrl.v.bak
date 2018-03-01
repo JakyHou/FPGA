@@ -1,0 +1,21 @@
+module	sys_ctrl(
+	input	ext_clk,
+	input ext_rst_n,
+	
+	output reg sys_rst_n,
+	output clk_25m,
+	output clk_33m,
+	output clk_50m,
+	output clk_65m,
+	output clk_100m
+	);
+	
+reg rst_r1,rst_r2;
+
+always @(posedge ext_clk or negedge ext_rst_n)
+		if(!ext_rst_n) rst_r1 <= 1'b0;
+		else rst_r1 <= 1'b1;
+		
+always @(posedge ext_clk or negedge ext_rst_n)
+		if(!ex_rst_n) rst_r2 <= 1'b0;
+		else rst_r2 <= rst_r1;
